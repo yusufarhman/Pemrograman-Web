@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+      }
+      input[type="text"],
+      input[type="date"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      fieldset {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+      }
+      legend {
+        font-weight: bold;
+        padding: 0 10px;
+      }
+      .radio-group {
+        display: flex;
+        gap: 20px;
+      }
+      .radio-group label {
+        display: flex;
+        align-items: center;
+        margin: 0;
+      }
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="post">
+      <h1>Form</h1>
+
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" />
+
+      <label for="alamat">Alamat</label>
+      <textarea id="alamat" name="alamat"></textarea>
+
+      <label for="tanggal-lahir">Tanggal Lahir</label>
+      <input type="date" id="tanggal-lahir" name="tanggal-lahir" />
+
+      <fieldset>
+        <legend>Jenis Kelamin</legend>
+        <div class="radio-group">
+          <label for="laki-laki">
+            <input
+              type="radio"
+              id="laki-laki"
+              name="jenis-kelamin"
+              value="Laki laki"
+            />
+            Laki laki
+          </label>
+          <label for="perempuan">
+            <input
+              type="radio"
+              id="perempuan"
+              name="jenis-kelamin"
+              value="Perempuan"
+            />
+            Perempuan
+          </label>
+        </div>
+      </fieldset>
+
+      <label for="pilih-pendidikan">Pendidikan</label>
+      <select id="pilih-pendidikan" name="pendidikan">
+        <option value="SMA">SMA</option>
+        <option value="S1">S1</option>
+        <option value="S2">S2</option>
+        <option value="S3">S3</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

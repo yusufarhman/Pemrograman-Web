@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        perspective: 1000px;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 60%;
+        margin: 40px auto;
+        font-family: "Segoe UI", sans-serif;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        overflow: hidden;
+        animation: floatIn 0.8s ease-out;
+        background: rgba(255, 255, 255, 0.95);
+        transform-style: preserve-3d;
+      }
+
+      td {
+        padding: 20px;
+        text-align: center;
+        border: none;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 1.1em;
+      }
+
+      tr:first-child td {
+        background: linear-gradient(45deg, #00b4db, #0083b0);
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.2em;
+      }
+
+      tr:not(:first-child):hover {
+        transform: translateZ(20px);
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      td:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        background: white;
+      }
+
+      h4 {
+        color: white;
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      [colspan="2"] {
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        color: white;
+        font-weight: bold;
+      }
+
+      [rowspan="2"] {
+        background: linear-gradient(45deg, #a8edea, #fed6e3);
+        color: #444;
+        font-weight: bold;
+      }
+
+      @keyframes floatIn {
+        0% {
+          opacity: 0;
+          transform: translateY(50px) rotateX(10deg);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) rotateX(0);
+        }
+      }
+
+      /* Add subtle glass effect */
+      table::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>Elegant Table Design</h4>
+    <table>
+      <tr>
+        <td>First</td>
+        <td>Row</td>
+      </tr>
+      <tr>
+        <td>Second</td>
+        <td>Row</td>
+      </tr>
+      <tr>
+        <td colspan="2">Kolom dengan colspan</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Kolom dengan rowspan</td>
+        <td>Row</td>
+      </tr>
+      <tr>
+        <td>Row</td>
+      </tr>
+    </table>
+  </body>
+</html>
